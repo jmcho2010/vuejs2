@@ -9,10 +9,35 @@ import {ref, computed} from 'vue'
     export default{
         name: 'TodoList',
         setup(){
-            const todos = ref([]);
-            const newTodo = ref([]);
-            const currentFilter = ref('전체');
-            const filters = ['전체', '진행중', '완료'];
+            // 상태 정의
+            const todos = ref([]); // 할일의 목록 배열
+            const newTodo = ref([]); // 새로운 할 일 입력값
+            const currentFilter = ref('전체'); // 현재 선택된 필터
+            const filters = ['전체', '진행중', '완료']; // 필터 옵션
+
+            // 할일 추가 메서드
+            // 바닐라 js 쓰듯이 처리.
+            const addTodo = () => {
+                if(newTodo.value.trim()){// 입력값이 비어있는지 확인.
+                   todos.value.push({
+                      id: Date.now(), // 현재 시간
+                      text: newTodo.value, //입력된 할일
+                      completed: false // 초기 완료 상태는 false
+                   })  
+                   newTodo.value = '' // 입력창 초기화
+                }
+            }
+
+            const removeTodo = (id) =>{
+                todos.value = todos.value.filter(todo => todo.id !==id)
+                 // -> 선택된 id를 제외한 새 배열 생성
+            }
+
+            // 필터링된 할일 목록
+            const filteredTodos = computed(() =>{
+                switch (currentFilter.value)
+            })
+
         }
     }
 
