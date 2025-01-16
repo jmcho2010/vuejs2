@@ -123,6 +123,7 @@ import {ref, computed} from 'vue'
 </script>
 
 <style scoped>
+
 .todo-container {
   padding: 20px;
 }
