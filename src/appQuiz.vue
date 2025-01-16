@@ -4,6 +4,9 @@
         <button @click="showModal('AlertModal', { message: '안녕하세요!' })">
             알림 모달
         </button>
+        <button @click="showModal('ConfirmModal', { message: '저장하시겠습니까?' })">
+            확인 모달
+        </button>
 
         <transition name="modal">
             <component
