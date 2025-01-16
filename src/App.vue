@@ -13,7 +13,6 @@
     />
     <props-exam 
     food-name="pizza"
-    food-desc="피자는 피자나무에서 자라요"
     v-bind:is-favorite="false"
     />
     <props-exam 
