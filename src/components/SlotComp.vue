@@ -1,16 +1,25 @@
 <template>
-    <div>
-        <p>슬롯이 뭐임?</p>
-        <slot></slot><!-- 컴포넌트의 이름을 정의하지 않고 쓸때.-->
-    </div>
+  <div class="container">
+    <header>
+      <!-- 슬롯은 무조건 slot이라는 이름으로만 만들어두진 않음.-->
+      <slot name="header"><h1>헤더인데 정의된게 있을때만 적용</h1></slot>
+    </header>
+    <main>
+        <slot></slot>
+    </main>
+    <footer>
+        <slot name="footer"></slot>
+    </footer>
+  </div>
 
 </template>
 
-<script></script>
+<script>
+    export default{
+        name: 'SlotComp'
+    }
+</script>
 
 <style scoped>
-    div{
-        background-color: crimson;
-    }
 
 </style>

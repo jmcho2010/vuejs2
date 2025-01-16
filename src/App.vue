@@ -1,8 +1,18 @@
 <template>
-    <div>
-        <slot-com></slot-com>
-    </div>
-  </template>
+
+  <div id="app">
+    <slot-comp>
+      <template v-slot:header>
+        <h1>슬롯이 정상적으로 적용되면 이게 나오겠지</h1>
+      </template>
+      <h2>이건 어디서 어떻게 사용하는지?</h2>
+      <template v-slot:footer>
+        <h1>footer 정의</h1>
+      </template>
+    </slot-comp>
+  </div>
+
+</template>
   
   <script>
   // 컴포넌트 지역화
