@@ -22,7 +22,7 @@ export default{
     },
     methods:{
         toggleFavorite(){
-            this.foodIsFavorite = !this.foodIsFavorite;
+            this.$emit('toggle-favorite');
         }
     }
 

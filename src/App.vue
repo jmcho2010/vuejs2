@@ -1,11 +1,12 @@
 <template>
     <h1>Food</h1>
-    <div id="wrapper">
+    <div class="wrapper">
         <props-exam
          v-for="i in foods"
          :food-name="i.name"
          :food-desc="i.desc"
-         :is-favorite="i.favorite"/>
+         :is-favorite="i.favorite"
+         @toggle-favorite="receiveEmit"/>
     </div>
     <!-- 
     아래와 같은 방식으로 웹 서비스를 제공하는것은
@@ -43,8 +44,17 @@ export default{
                 {name: '사과',
                  desc: '사과는 사과나무에서 열려요',
                  favorite: true   
+                },
+                {name: '피자',
+                 desc: '피자는 피자나무에서 열려요',
+                 favorite: true   
                 }
             ]
+        };
+    },
+    methods:{
+        receiveEmit(foodname){
+            alert("선택한 항목");
         }
     }
 }
