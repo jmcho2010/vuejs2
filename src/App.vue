@@ -15,6 +15,14 @@
 </template>
   
   <script>
+  import SlotComp from './components/SlotComp.vue';
+  export default{
+    name: 'App',
+    components:{
+      SlotComp
+    }
+  }
+
   // 컴포넌트 지역화
   // 원하는 컴포넌트에 선언함으로써 지역화를 진행.
     // import CompOne from './components/CompOne.vue'
@@ -26,8 +34,10 @@
     // }
   </script>
   
-  <style>
-    p {
+  <style scoped>
+
+
+    /* p {
       width: 200px;
     }
     #app div {
@@ -41,5 +51,5 @@
     }
     .compTwoDiv {
       background-color: lightcoral;
-    }
+    } */
   </style>   
