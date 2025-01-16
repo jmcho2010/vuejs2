@@ -23,10 +23,12 @@
 
 <script>
 import AlertModal from './quiz1compo/AlertModal.vue'
+import ConfirmModal from './quiz1compo/ConfirmModal.vue'
 
 export default{
     components:{
-        AlertModal
+        AlertModal,
+        ConfirmModal
     },
     data(){
         return{
@@ -43,8 +45,10 @@ export default{
             this.currentModal = null
             this.modalProps = {}
         },
-        handleConfirm(){
-
+        handleConfirm(data){
+            // 여기서는 확인 눌렀을때 다른 이벤트를 수행하는것또한 가능.
+            console.log('확인 눌렀나?', data);
+            this.closeModal();
         }
     }
 }

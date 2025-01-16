@@ -1,10 +1,10 @@
 <template>
     <div class="modal-overlay" @click.self="$emit('close')">
       <div class="modal-content">
-        <h3>확인</h3>
-        <p>{{ message }}</p>
-        <div>
-            <button @click="$emit('confirm', true)">확인</button>
+        <h3>{{ title }}</h3>
+        <input v-model="inputValue" @keyup.enter="confirm">
+        <div class="modal-buttons">
+            <button @click="confirm">확인</button>
             <button @click="$emit('close')">취소</button>
         </div>
 
