@@ -27,11 +27,21 @@ export default{
     },
     data(){
         return{
-
+            currentModal: null,
+            modalProps: {}
         }
     },
     methods:{
+        showModal(type, props = {}){
+            this.currentModal = type
+            this.modalProps = props
+        },
+        closeModal(){
 
+        },
+        handleConfirm(){
+
+        }
     }
 }
 
