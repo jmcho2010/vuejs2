@@ -7,6 +7,9 @@
         <button @click="showModal('ConfirmModal', { message: '저장하시겠습니까?' })">
             확인 모달
         </button>
+        <button @click="showModal('InputModal', { title: '사용자 입력' })">
+            확인 모달
+        </button>
 
         <transition name="modal">
             <component
@@ -24,11 +27,13 @@
 <script>
 import AlertModal from './quiz1compo/AlertModal.vue'
 import ConfirmModal from './quiz1compo/ConfirmModal.vue'
+import InputModal from './quiz1compo/InputModal.vue'
 
 export default{
     components:{
         AlertModal,
-        ConfirmModal
+        ConfirmModal,
+        InputModal
     },
     data(){
         return{

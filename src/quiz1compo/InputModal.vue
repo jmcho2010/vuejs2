@@ -7,7 +7,6 @@
             <button @click="confirm">확인</button>
             <button @click="$emit('close')">취소</button>
         </div>
-
       </div>
     </div>
 </template>
@@ -18,6 +17,18 @@ export default{
         message: {
             type:String,
             required:true
+        }
+    },
+    data(){
+        return{
+            inputValue: ''
+        }
+    },
+    methods: {
+        confirm(){
+            if(this.inputValue.trim()){
+                this.$emit('confirm', this.inputValue)
+            }
         }
     }
 }
