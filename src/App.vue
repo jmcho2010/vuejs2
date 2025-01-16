@@ -1,23 +1,19 @@
 <template>
     <div>
-      <h3>Global Components</h3>
-      <p>App.vue</p>
-      <p>The CompOne.vue component is used inside both App.vue and CompTwo.vue.</p>
-      <comp-one /> <br>
-      <comp-two />
+        <slot-com></slot-com>
     </div>
   </template>
   
   <script>
   // 컴포넌트 지역화
   // 원하는 컴포넌트에 선언함으로써 지역화를 진행.
-    import CompOne from './components/CompOne.vue'
+    // import CompOne from './components/CompOne.vue'
 
-    export default{
-        components:{
-            'comp-one' : CompOne
-        }
-    }
+    // export default{
+    //     components:{
+    //         'comp-one' : CompOne
+    //     }
+    // }
   </script>
   
   <style>
