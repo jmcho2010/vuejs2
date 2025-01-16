@@ -1,6 +1,18 @@
 <template>
 
-  <div id="app">
+<h1>동적 컴포넌트 예시</h1>
+<button @click="toggleValue= !toggleValue">컴포넌트 스위치</button>
+<component :is="activeComp"></component>
+<!--
+슬롯의 규칙
+  <slot-comp>
+    이 영역은 자식 컴포넌트에서 작업한 내용이 출력
+  </slot-comp>
+  <slot-comp>
+    내용을 추가하면 이 영역의 내용을 쓸수 있음.
+  </slot-comp>
+-->
+ <!-- <div id="app">
     <slot-comp>
       <template v-slot:header>
         <h1>슬롯이 정상적으로 적용되면 이게 나오겠지</h1>
@@ -10,18 +22,36 @@
         <h1>footer 정의</h1>
       </template>
     </slot-comp>
-  </div>
+  </div> -->
+  <!-- <div id="wrapper">
+    <slot-comp v-for="i in foods">
+      <img v-bind:src="i.url">
+      <h3>{{ i.name }}</h3>
+      <p>{{ i.desc }}</p>
+    </slot-comp>
+  </div> -->
+
 
 </template>
   
   <script>
-  import SlotComp from './components/SlotComp.vue';
-  export default{
-    name: 'App',
-    components:{
-      SlotComp
-    }
-  }
+
+
+
+  // export default {
+  //   data() {
+  //     return {
+  //       foods: [
+  //       { name: 'Apple', desc: 'Apples are a type of fruit that grow on trees.', url: './src/assets/img_apple.svg'},
+  //       { name: 'Pizza', desc: 'Pizza has a bread base with tomato sauce, cheese, and toppings on top.', url: './src/assets/img_pizza.svg'},
+  //       { name: 'Rice', desc: 'Rice is a type of grain that people like to eat.', url: './src/assets/img_rice.svg'},
+  //       { name: 'Fish', desc: 'Fish is an animal that lives in water.', url: './src/assets/img_fish.svg'},
+  //       { name: 'Cake', desc: 'Cake is something sweet that tates good but is not consodered healthy.', url: './src/assets/img_cake.svg'}
+  //     ]
+  //     }
+  //   }
+  // }
+
 
   // 컴포넌트 지역화
   // 원하는 컴포넌트에 선언함으로써 지역화를 진행.
@@ -34,8 +64,13 @@
     // }
   </script>
   
-  <style scoped>
-
+  <style>
+  div{
+    width: 300px;
+    margin: 15px;
+    padding: 15px;
+    border: 3px solid black;
+  }
 
     /* p {
       width: 200px;
@@ -52,4 +87,13 @@
     .compTwoDiv {
       background-color: lightcoral;
     } */
-  </style>   
+    /* #wrapper {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #wrapper img {
+    display: block; 
+    margin: auto; 
+    width: 60%;
+  } */
+  </style> 
