@@ -1,6 +1,7 @@
 <template>
     <h1>Food</h1>
-    <props-exam 
+    <div class="wrapper">
+        <props-exam 
     food-name="Apples"
     food-desc="사과는 사과 나무에서 자라요"
     v-bind:is-favorite="true"
@@ -20,16 +21,20 @@
     food-desc="파스타는 파스타나무에서 자라요"
     v-bind:is-favorite="false"
     />
-
+    </div>
 </template>
 
 <script></script>
 
 <style>
-    #app > div{
+    .wrapper{
+        display: flex;
+        flex-wrap:wrap;
+    }
+
+    .wrapper > div{
         border:dashed black 1px;
-        display: inline-block;
-        width: 120px;
+        flex-basis: 150px;
         margin: 10px;
         padding: 10px;
         background-color: lightgreen;
