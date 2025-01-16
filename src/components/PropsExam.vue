@@ -1,9 +1,9 @@
 <template>
     <div>
         <h2>{{ foodName }}</h2>
-        <img src="../assets/img_quality.svg" v-show="isFavorite">
+        <img src="../assets/img_quality.svg" v-show="foodIsFavorite">
         <p>{{ foodDesc }}</p>
-        <button @click="toggleFavorite">Favorite</button>
+        <button v-on:click="toggleFavorite">Favorite</button>
     </div>
 </template>
 
@@ -21,7 +21,9 @@ export default{
         }
     },
     methods:{
-
+        toggleFavorite(){
+            this.foodIsFavorite = !this.foodIsFavorite;
+        }
     }
 
     // props는 단순하게 문자열로만 쓰는것은 아님.
