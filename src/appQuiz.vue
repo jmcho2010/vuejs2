@@ -37,7 +37,8 @@ export default{
             this.modalProps = props
         },
         closeModal(){
-
+            this.currentModal = null
+            this.modalProps = {}
         },
         handleConfirm(){
 
