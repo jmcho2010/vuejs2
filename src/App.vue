@@ -35,7 +35,25 @@
 </template>
   
   <script>
+  // 동적 컴포넌트 예시 
+  export default{
+    data(){
+      return{
+        toggleValue: true
+      }
+    },
 
+    computed:{
+      activeComp(){
+        if(this.toggleValue){
+          return 'comp-one'
+        }
+        else{
+          return 'comp-two'
+        }
+      }
+    }
+  }
 
 
   // export default {
