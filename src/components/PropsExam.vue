@@ -22,7 +22,7 @@ export default{
     },
     methods:{
         toggleFavorite(){
-            this.$emit('toggle-favorite');
+            this.$emit('toggle-favorite', this.foodName);
         }
     }
 

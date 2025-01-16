@@ -3,6 +3,7 @@
     <div class="wrapper">
         <props-exam
          v-for="i in foods"
+         :key="i.name"
          :food-name="i.name"
          :food-desc="i.desc"
          :is-favorite="i.favorite"
@@ -53,8 +54,12 @@ export default{
         };
     },
     methods:{
-        receiveEmit(foodname){
-            alert("선택한 항목");
+        // emit을 활용할경우
+        // 자식컴포넌트에는 같은 메서드를
+        // 만들이유가 없기때문에 재사용성 상승의
+        // 효과를 누릴수 있음.
+        receiveEmit(food){
+            alert("선택한 항목 : " + food);
         }
     }
 }
