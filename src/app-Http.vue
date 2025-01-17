@@ -43,6 +43,7 @@ export default{
 </template>
 
 <script>
+    import axios from 'axios'
     export default{
         data(){
             return{
@@ -52,10 +53,10 @@ export default{
             }
         },
         async created(){
-            this.loading = true
+            //this.loading = true;
             const response = await axios.get("http://jsonplaceholder.typicode.com/posts");
             this.posts = response.data
-            
+
         }
     }
 </script>
