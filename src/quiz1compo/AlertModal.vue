@@ -1,4 +1,6 @@
 <template>
+    <!-- .self : 이벤트가 정확하게 이 요소를 가리켰을때만 실행.
+        event객체의 target과 비슷한 효과-->
     <div class="modal-overlay" @click.self="$emit('close')">
       <div class="modal-content">
         <h3>알림</h3>

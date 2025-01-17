@@ -11,6 +11,19 @@
             확인 모달
         </button>
 
+        <!-- transition : 우리가 알고있는 트랜지션
+        name=modal : Vue가 이 이름을 기반으로 
+        /* 진입 애니메이션 */
+        .modal-enter-active  /* 진입 중 */
+        .modal-enter-from   /* 진입 시작 상태 */
+        .modal-enter-to     /* 진입 종료 상태 */
+
+        /* 퇴장 애니메이션 */
+        .modal-leave-active  /* 퇴장 중 */
+        .modal-leave-from   /* 퇴장 시작 상태 */
+        .modal-leave-to     /* 퇴장 종료 상태 */
+ 
+        -->
         <transition name="modal">
             <component
                 v-if="currentModal"
