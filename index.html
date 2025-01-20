@@ -168,8 +168,9 @@ SFC와 스타일링(style scoped)
        - 그 외에 객체 생성 이전 이벤트다 보니 객체 생성이후 이벤트들에는 접근 불가.
      - 글로벌 이벤트 리스너 설정시 사용.
     2. created (-) : DOM에 접근 가능한 초기 데이터 값 설정시 사용하는 메서드.
-    3. beforeMount
-    4. mounted (-)
+    3. beforeMount : 초기 렌더링 직전에 실행.
+    4. mounted (-) : 컴포넌트 자체가 DOM에 추가되는 단계.
+        - DOM에 컴포넌트가 마운트 된 후 실행.
     5. beforeUpdate
     6. updated (-)
     7. beforeUnmount (-)

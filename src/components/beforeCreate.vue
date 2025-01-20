@@ -20,8 +20,9 @@ export default {
 //   }
     //created는 DOM 요소들을 모두 렌더링후에 실행되는 메서드(훅)이다 보니
     // text 프로퍼티에 값을 제대로 세팅하는것이 가능.
-    created() {
-		this.text = 'initial text';
+    async created() {
+		await fetch("주소");
+        this.text = 'initial text';
         console.log("beforeCreate: The component is not created yet.");
     }
 }
