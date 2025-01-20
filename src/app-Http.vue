@@ -29,7 +29,7 @@ export default{
 
 </script> -->
 
-<template>
+<!-- <template>
     <div class="posts">
         <h2>게시물 목록</h2>
         <div v-if="loading">로딩중...</div>
@@ -53,12 +53,74 @@ export default{
             }
         },
         async created(){
-            //this.loading = true;
-            const response = await axios.get("http://jsonplaceholder.typicode.com/posts");
-            this.posts = response.data
+            
+            try{
+                this.loading = true;
+                const response = await axios.get("http://jsonplaceholder.typicode.com/posts");
+                this.posts = response.data
+            }catch(err){
+                this.error = '데이터를 불러오는데 실패함'
+            }finally{
+                this.loading = false
+            }
+
 
         }
     }
-</script>
+        실습 퀴즈
+JSONPlaceholder API를 사용하여 게시물 관리 시스템을 만드세요.
+요구사항:
+게시물 목록 조회 (GET /posts)
+게시물 상세 조회 (GET /posts/{id})
+새 게시물 작성 (POST /posts)
+게시물 수정 (PUT /posts/{id})
+게시물 삭제 (DELETE /posts/{id})
+로딩 상태와 에러 처리 구현
+</script> -->
 
-<style></style>
+<template>
+    <h1>Example</h1>
+    <p>Click the button to fetch data with an HTTP request.</p>
+    <p>Each click generates an object with a random user from <a href="https://random-data-api.com/" target="_blank">https://random-data-api.com/</a>.</p>
+    <p>The robot avatars are lovingly delivered by <a href="http://Robohash.org" target="_blank">RoboHash</a>.</p>
+    <button @click="fetchData">Fetch data</button>
+    <div v-if="data" id="dataDiv">
+      <img :src="data.data.avatar" alt="avatar">
+      <pre>{{ data.data.first_name + " " + data.data.last_name }}</pre>
+      <p>"{{ data.data.employment.title }}"</p>
+    </div>
+  </template>
+  
+  <script>
+    import axios from 'axios'
+  
+    export default {
+      data() {
+        return {
+          data: null,
+        };
+      },
+      methods: {
+        async fetchData() {      
+          this.data = await axios.get("https://random-data-api.com/api/v2/users");
+        }
+      }
+    };
+  </script>
+  
+  <style>
+  #dataDiv {
+    width: 240px;
+    background-color: aquamarine;
+    border: solid black 1px;
+    margin-top: 10px;
+    padding: 10px;
+  }
+  #dataDiv > img {
+    width: 100%;
+  }
+  pre {
+    font-size: larger;
+    font-weight: bold;
+  }
+  </style>   

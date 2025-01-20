@@ -4,7 +4,8 @@ import { createApp } from 'vue'
 //import App from './app.vue' // app 컴포넌트 인식
 //import App from './appQuiz.vue';
 //import App from './app-Teleport.vue'
-import App from './app-Http.vue'
+//import App from './app-Http.vue'
+import App from './app-LifeCycle.vue'
 //import tel from './teleport/Tel.vue'
 //import ItemList from './components/ItemList.vue'//ItemList 정보 
 //import PropsExam from './components/PropsExam.vue';
