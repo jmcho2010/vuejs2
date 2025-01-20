@@ -10,11 +10,12 @@ import App from './app-LifeCycle.vue'
 //import ItemList from './components/ItemList.vue'//ItemList 정보 
 //import PropsExam from './components/PropsExam.vue';
 // import SlotComp from './components/SlotComp.vue';
-
+import lifeCycle1 from './components/beforeCreate.vue'
 
 // import CompOne from './components/CompOne.vue'
 // import CompTwo from './components/CompTwo.vue'
 const app = createApp(App)
+app.component('comp-one', lifeCycle1)
 //app.component('tel', tel);
 //app.component('slot-comp', SlotComp);
 
