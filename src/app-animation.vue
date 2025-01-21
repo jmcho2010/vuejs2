@@ -2,7 +2,11 @@
   <h1>Add/Remove &lt;p&gt; Tag</h1>
   <button @click="this.exists = !this.exists">{{btnText}}</button><br>
   <Transition>
-    <p v-if="exists">Hello World!</p>
+    <p v-if="exists" id="p1">Hello World!</p>
+  </Transition>
+  <button @click="this.exists2 = !this.exists2">{{btn2Text}}</button><br>
+  <Transition name="test">
+    <p v-if="exists2" id="p2">헬로헬로</p>
   </Transition>
 </template>
   
@@ -10,12 +14,21 @@
   export default {
     data() {
       return {
-        exists: false
+        exists: false,
+        exists2 : false
       }
     },
     computed: {
       btnText() {
         if(this.exists) {
+          return 'Remove';
+        }
+        else {
+          return 'Add';
+        }
+      },
+      btnText2() {
+        if(this.exists2) {
           return 'Remove';
         }
         else {
@@ -28,13 +41,13 @@
   
   <style>
 /* 애니메이션 속성 활용하기*/ 
-  .v-enter-active{
+  .test-enter-active{
     background-color: lightgreen;
     animation: added 1s;
   }
-  .v-leave-active{
+  .test-leave-active{
     background-color: crimson;
-    animation: added 1s;
+    animation: added 1s reverse;
   }
   @keyframes added{
      from{
@@ -42,7 +55,7 @@
         translate: -100px 0;
      }
      to{
-        opacity: 0;
+        opacity: 1;
         translate: 0 0;
      }
   }
