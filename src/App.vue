@@ -82,7 +82,7 @@
     // }
   </script>
   
-  <style>
+<style scoped>
   div{
     width: 300px;
     margin: 15px;
