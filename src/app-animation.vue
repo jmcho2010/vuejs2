@@ -4,7 +4,7 @@
   <Transition>
     <p v-if="exists" id="p1">Hello World!</p>
   </Transition>
-  <button @click="this.exists2 = !this.exists2">{{btn2Text}}</button><br>
+  <button @click="this.exists2 = !this.exists2">{{btnText2}}</button><br>
   <Transition name="test">
     <p v-if="exists2" id="p2">헬로헬로</p>
   </Transition>
@@ -41,11 +41,11 @@
   
   <style>
 /* 애니메이션 속성 활용하기*/ 
-  .test-enter-active{
+  .v-enter-active{
     background-color: lightgreen;
     animation: added 1s;
   }
-  .test-leave-active{
+  .v-leave-active{
     background-color: crimson;
     animation: added 1s reverse;
   }
@@ -57,6 +57,26 @@
      to{
         opacity: 1;
         translate: 0 0;
+     }
+  } 
+  .test-enter-active{
+    background-color: lightgreen;
+    animation: added2 1s;
+  }
+  .test-leave-active{
+    background-color: crimson;
+    animation: added2 1s reverse;
+  }
+  @keyframes added2{
+     from{
+        opacity: 0;
+        rotate:0;
+        scale:0.1;
+     }
+     to{
+        opacity: 1;
+        rotate:360deg;
+        scale: 1;
      }
   }
   /*add 버튼 누를때 실행되는 이벤트*/ 
@@ -77,11 +97,13 @@
     opacity: 0;
     translate: 100px 0;
   } */
-  p {
-    background-color: lightgreen;
+  #p1, #p2 {
     display: inline-block;
     padding: 10px;
-    transition: all 0.5s;
+    border: dashed black 1px;
+  }
+  #p2 {
+    background-color: lightcoral;
   }
   </style>                  
 
