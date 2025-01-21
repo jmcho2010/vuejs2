@@ -8,7 +8,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 //import App from './app-Http.vue'
 //import App from './app-LifeCycle.vue'
 //import App from './app-routing.vue'
-import App from './app-animation.vue'
+import App from './app-animation2.vue'
 //import tel from './teleport/Tel.vue'
 //import ItemList from './components/ItemList.vue'//ItemList 정보 
 //import PropsExam from './components/PropsExam.vue';
