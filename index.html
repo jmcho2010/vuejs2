@@ -181,12 +181,18 @@ SFC와 스타일링(style scoped)
     
     7. beforeUnmount (-)
     8. unmounted (-)
-    9. errorCaptured
-    10. renderTracked
-    11. renderTriggered
-    12. activated
-    13. deactivated
-    14. serverPreFetch
+    9. errorCaptured : 오류 발생시 호출되는 메서드
+    10. renderTracked : vue3에 출시된 메서드(훅)
+     - 컴포넌트의 렌더링 과정을 추적하고 최적화 하는데 도움주는 훅.
+     - beforeUpdate, updated와 같이 연계되서 사용,
+     - 성능에 영향을 주기때문에 개발과정에서만 사용하고 운영과정에서는 제외할것.
+    11. renderTriggered : 렌더링 과정이 완료된 후 실행되는 훅
+     - 컴포넌트 렌더링 후에 필요한 작업을 수행하거나 렌더링 결과를 확인할수 있음.
+    12. activated : mounted와 비슷.
+     - 보관하고 있는 구성요소가 활성화 될시 호출
+    13. deactivated : 보관하고 있는 구성요소가 비활성화 될시 호출
+    14. serverPreFetch : SSR 환경에서 사용하는 비동기 함수.
+     - 라우팅과 관련되어있는 함수.
 
 
      Creation(생성) 단계

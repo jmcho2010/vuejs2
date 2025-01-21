@@ -1,4 +1,23 @@
 <template>
+    <h1>The 'renderTracked' and 'renderTriggered' Lifecycle Hooks</h1>
+    <p>The 'renderTracked' and 'renderTriggered' lifecycle hooks are used for debugging.</p>
+    <p><mark>This example only works in development mode, so to see the hooks run, you must copy this code and run it on you own computer in development mode.</mark></p>
+    <div>
+      <comp-one></comp-one>
+    </div>
+  </template>
+  
+  <style scoped>
+    div {
+      border: dashed black 1px;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 10px;
+      background-color: lightgreen;
+    }
+  </style>                
+
+<!-- <template>
     <h1>Lifecycle Hooks</h1>
     <button @click="this.activeComp = !this.activeComp">{{ btnText }}</button>
     <div>
@@ -35,7 +54,7 @@
       width: 400px;
       background-color: lightgreen;
     }
-  </style>  
+  </style>   -->
 
 
 <!-- 

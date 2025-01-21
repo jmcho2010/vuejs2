@@ -13,12 +13,14 @@ import App from './app-LifeCycle.vue'
 //import lifeCycle1 from './components/beforeCreate.vue'
 //import lifeCycle2 from './components/beforeMount.vue'
 //import lifeCycle3 from './components/beforeUpdate.vue'
-import lifeCycle3 from './components/beforeDelete.vue'
+//import lifeCycle4 from './components/beforeDelete.vue'
+import lifeCycle5 from './components/render.vue'
 // import CompOne from './components/CompOne.vue'
 // import CompTwo from './components/CompTwo.vue'
 const app = createApp(App)
 //app.component('comp-one', lifeCycle2)
-app.component('comp-one', lifeCycle4)
+//app.component('comp-one', lifeCycle4)
+app.component('comp-one', lifeCycle5)
 //app.component('comp-one', lifeCycle3)
 //app.component('comp-one', lifeCycle1)
 //app.component('tel', tel);

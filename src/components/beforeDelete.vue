@@ -4,8 +4,12 @@
 
 <script>
 export default{
+    unmounted(){
+        alert("이 알람은 언제뜰까?22222")
+    } ,
     beforeUnmount(){
         alert("이 알람은 언제뜰까?")
-    }   
+    }
+      
 }
 </script>
